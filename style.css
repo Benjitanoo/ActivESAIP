@@ -256,15 +256,15 @@ main {
   position: absolute;
   top: 0%;
   left: 3%;
-  width: 10%;
-  height: 20%;
+  width: 9.5%;
+  height: 19%;
 }
 
 /* meteo */
 
 #weather-widget {
   position: absolute;
-  bottom: 65%;
+  bottom: 65.55%;
   left: 1%;
   padding: 0%;
   height: 15%;
