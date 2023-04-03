@@ -98,7 +98,6 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Aix-en-Provence&units=m
     })
     .catch(error => console.log(error))
 
-
 /*Message index.html*/
 
 
@@ -117,32 +116,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
     document.getElementById("message").innerHTML = message;
 });
 
+var jourActuel = new Date().toLocaleDateString('fr-FR', { weekday: 'long' });
+
 //Requête API StEloi
 
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 var data = JSON.stringify({
-"API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
-"JOUR": day,
-"FORCE_P": 6
+    "API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
+    "JOUR": "L",
 });
 
 var requestOptions = {
-method: 'POST',
-headers: myHeaders,
-body: data,
-redirect: 'follow'
+    method: 'POST',
+    headers: myHeaders,
+    body: data,
+    redirect: 'follow'
 };
 
 fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
-.then(response => response.text())
-.then(result => results(result))
-.catch(error => console.log('error', error));
+    .then(response => response.text())
+    .then(result => results(result))
+    .catch(error => console.log('error', error));
 
-function results(data)
-{
-var reponse=JSON.parse(data);
-console.log("Objet reponse :");
-console.log(reponse);
+function results(data) {
+    var reponse = JSON.parse(data);
+    var messagesContainer = document.getElementById("messages-container");
+    messagesContainer.innerHTML = JSON.stringify(reponse);
+
 }
