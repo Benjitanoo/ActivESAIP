@@ -117,7 +117,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Aix-en-Provence&units=m
         document.getElementById("message").innerHTML = message;
       });
 
-      var myHeaders = new Headers();
+var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 var data = JSON.stringify({
