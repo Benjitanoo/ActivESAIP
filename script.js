@@ -142,5 +142,5 @@ function results(data) {
     var reponse = JSON.parse(data);
     console.log("Objet reponse :");
     console.log(reponse);
-    document.getElementById("ateliers").innerHTML = JSON.stringify(reponse);
+    document.getElementById("atelier").innerHTML = JSON.stringify(reponse);
 }
