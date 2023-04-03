@@ -43,6 +43,22 @@ body {
   left: 1%;
 }
 
+.titre5 {
+  font-size: 150%;
+  background-color: lightblue;
+  position: absolute;
+  top: 6%;
+  left: 35%;
+}
+
+.titre6 {
+  font-size: 150%;
+  background-color: lightblue;
+  position: absolute;
+  top: 26%;
+  left: 35%;
+}
+
 /* Partie Menu */
 
 .Menu {
@@ -343,6 +359,61 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cadre1 {
+  position: absolute;
+  top: 10%;
+  bottom: 50%;
+  left: 35%;
+  width: 25%;
+  height: 10%;
+  border: 10px solid white;
+  border-radius: 10%;
+}
+
+.cadre2 {
+  position: absolute;
+  top: 30%;
+  bottom: 20%;
+  left: 35%;
+  width: 25%;
+  height: 10%;
+  border: 10px solid white;
+  border-radius: 10%;
+}
+
+.Menub {
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  right: 55%;
+}
+
+.Evenementsb {
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  right: 55%;
+}
+
+.Messagesb {
+  position: absolute;
+  top: 50%;
+  left: 32.55%;
+  right: 55%;
+  width: 30%;
+  padding-bottom: 10%;
+  font-size: 140%;
+}
+.bouton {
+  position: absolute;
+  top: 77%;
+  left: 43%;
+  right: 55%;
+  width: 10%;
+  height: 10%;
+  font-size: 150%;
 }
 
 
