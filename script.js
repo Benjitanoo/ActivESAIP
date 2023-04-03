@@ -117,30 +117,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
     document.getElementById("message").innerHTML = message;
 });
 
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+//Requête API StEloi
 
-var data = JSON.stringify({
-    "API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
-    "JOUR": day,
-    "FORCE_P": 6
+document.addEventListener("DOMContentLoaded", function () {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var data = JSON.stringify({
+        "API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
+        "JOUR": day,
+        "FORCE_P": 6
+    });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: data,
+        redirect: 'follow'
+    };
+
+    fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
+        .then(response => response.text())
+        .then(result => results(result))
+        .catch(error => console.log('error', error));
+
+    function results(data) {
+        var reponse = JSON.parse(data);
+        console.log("Objet reponse :");
+        console.log(reponse);
+        document.getElementById("messages-container").innerHTML = JSON.stringify(reponse);
+    }
 });
-
-var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: data,
-    redirect: 'follow'
-};
-
-fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
-    .then(response => response.text())
-    .then(result => results(result))
-    .catch(error => console.log('error', error));
-
-function results(data) {
-    var reponse = JSON.parse(data);
-    console.log("Objet reponse :");
-    console.log(reponse);
-    document.getElementById("atelier").innerHTML = JSON.stringify(reponse);
-}
