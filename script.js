@@ -117,13 +117,15 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Aix-en-Provence&units=m
         document.getElementById("message").innerHTML = message;
       });
 
+//Requête API STEloi
+
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 var data = JSON.stringify({
 "API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
-"JOUR": "L",
-"FORCE_P": 3
+"JOUR": day,
+"FORCE_P": 6
 });
 
 var requestOptions = {
