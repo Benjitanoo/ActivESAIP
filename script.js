@@ -3,6 +3,11 @@
 /* Diaporama */
 
 
+
+
+/* Diaporama */
+
+
 // Variables globales
 let compteur = 0 // Compteur qui permettra de savoir sur quelle slide nous sommes
 let timer, elements, slides, slideWidth
@@ -76,6 +81,10 @@ function stopTimer() {
 function startTimer() {
     timer = setInterval(slideNext, 3500)
 }
+
+
+/*Requête API météo */
+
 
 
 /*Requête API météo */
