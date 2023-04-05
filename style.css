@@ -160,7 +160,7 @@ body {
   display: block;
   /* changer la propriété display pour passer de inline-block à block */
   white-space: nowrap;
-  animation: JPOs 15s infinite linear;
+  animation: Ateliers 40s infinite linear;
   cursor: pointer;
 }
 
