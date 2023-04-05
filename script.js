@@ -147,11 +147,12 @@ function results(data) {
 
     for (var key in reponse.ateliers) {
         var ateliers = reponse.ateliers[key];
+        var horaires = reponse.horaires_creneau[key];
+
         for (var i = 0; i < ateliers.length; i++) {
-            var creneau = reponse.horaires_creneau[key][i];
             console.log("Matière: " + ateliers[i].intitule);
-            console.log("Horaire début: " + creneau[0]);
-            console.log("Horaire fin: " + creneau[1]);
+            console.log("Horaire début: " + horaires[i][0]);
+            console.log("Horaire fin: " + horaires[i][1]);
             console.log("Salle de cours: " + ateliers[i].salle);
             console.log("Professeur: " + ateliers[i].prof);
             console.log("");
