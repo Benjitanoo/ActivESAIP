@@ -2,6 +2,11 @@ body {
   background-color: lightblue;
 }
 
+
+/* index.html */
+
+/* titres */
+
 .titre1 {
   font-size: 150%;
   background-color: lightblue;
@@ -38,6 +43,23 @@ body {
   left: 1%;
 }
 
+.titre5 {
+  font-size: 150%;
+  background-color: lightblue;
+  position: absolute;
+  top: 6%;
+  left: 35%;
+}
+
+.titre6 {
+  font-size: 150%;
+  background-color: lightblue;
+  position: absolute;
+  top: 26%;
+  left: 35%;
+}
+
+/* Partie Menu */
 
 .Menu {
   position: absolute;
@@ -54,6 +76,8 @@ body {
   font-size: 150%;
   text-align: center;
 }
+
+/* Message en bas */
 
 .foot {
   position: absolute;
@@ -82,7 +106,9 @@ body {
   text-align: center;
 }
 
-.Examen {
+/* Partie prof absent */
+
+.ProfAbs {
   position: absolute;
   top: 69%;
   bottom: 15%;
@@ -94,20 +120,22 @@ body {
   overflow: hidden;
 }
 
-.Examen>div {
+.ProfAbs>div {
   display: block;
   /* changer la propriété display pour passer de inline-block à block */
   white-space: nowrap;
-  animation: Examen 15s infinite linear;
+  animation: ProfAbs 15s infinite linear;
   cursor: pointer;
 }
 
-.exam {
+.profabs {
   font-size: 150%;
   transform: translate3d(0, 100%, 0);
   text-align: center;
   /* ajouter une transformation pour faire défiler le texte de haut en bas */
 }
+
+/* Partie Évenements */
 
 .JPOs {
   position: absolute;
@@ -135,39 +163,38 @@ body {
   /* ajouter une transformation pour faire défiler le texte de haut en bas */
 }
 
-@keyframes foot {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+/* Ateliers */
 
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
+.Ateliers {
+  position: absolute;
+  top: 45%;
+  bottom: 37%;
+  left: 18%;
+  right: 43%;
+  overflow: hidden;
+  border: 10px solid white;
+  box-shadow: 0 .25% .5% #CCC, inset 0 0 1% .25% #CCC;
 }
 
-@keyframes Examen {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, -100%, 0);
-    /* ajuster la transformation pour faire défiler de haut en bas */
-  }
+.Ateliers>div {
+  display: block;
+  white-space: nowrap;
+  animation: Ateliers 10s infinite linear;
+  cursor: pointer;
 }
 
-@keyframes JPOs {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, -100%, 0);
-    /* ajuster la transformation pour faire défiler de haut en bas */
-  }
+.atelier {
+  font-size: 150%;
+  line-height: 230%;
+  text-align: center;
+  transform: translate3d(0, 100%, 0);
 }
 
+.temp {
+  font-size: 10%;
+}
 
+/* Diaporama */
 
 main {
   width: 90%;
@@ -223,17 +250,21 @@ main {
   padding: 30%;
 }
 
+/* logo saint-eloi */
+
 .logo-Saint-Eloi img {
   position: absolute;
   top: 0%;
   left: 3%;
-  width: 10%;
-  height: 20%;
+  width: 9.5%;
+  height: 19%;
 }
+
+/* meteo */
 
 #weather-widget {
   position: absolute;
-  bottom: 65%;
+  bottom: 65.55%;
   left: 1%;
   padding: 0%;
   height: 15%;
@@ -261,7 +292,7 @@ main {
 #weather-temp {
   top: 25%;
   left: 65%;
-  font-size: 200%;
+  font-size: 165%;
   color: black;
 }
 
@@ -277,29 +308,38 @@ main {
   height: 15%;
 }
 
-.Ateliers {
-  position: absolute;
-  top: 45%;
-  bottom: 37%;
-  left: 18%;
-  right: 43%;
-  overflow: hidden;
-  border: 10px solid white;
-  box-shadow: 0 .25% .5% #CCC, inset 0 0 1% .25% #CCC;
+/* Animation */
+
+@keyframes foot {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
-.Ateliers>div {
-  display: block;
-  white-space: nowrap;
-  animation: Ateliers 10s infinite linear;
-  cursor: pointer;
+@keyframes ProfAbs {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -100%, 0);
+    /* ajuster la transformation pour faire défiler de haut en bas */
+  }
 }
 
-.atelier {
-  font-size: 150%;
-  line-height: 230%;
-  text-align: center;
-  transform: translate3d(0, 100%, 0);
+@keyframes JPOs {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -100%, 0);
+    /* ajuster la transformation pour faire défiler de haut en bas */
+  }
 }
 
 @keyframes Ateliers {
@@ -312,12 +352,124 @@ main {
   }
 }
 
-.temp {
-  font-size: 10%;
-}
 
-.container{
+/* back.html */
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cadre1 {
+  position: absolute;
+  top: 10%;
+  bottom: 50%;
+  left: 35%;
+  width: 25%;
+  height: 10%;
+  border: 10px solid white;
+  border-radius: 10%;
+}
+
+.cadre2 {
+  position: absolute;
+  top: 30%;
+  bottom: 20%;
+  left: 35%;
+  width: 25%;
+  height: 10%;
+  border: 10px solid white;
+  border-radius: 10%;
+}
+
+.Menub {
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  right: 55%;
+}
+
+.Evenementsb {
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  right: 55%;
+}
+
+.Messagesb {
+  position: absolute;
+  top: 50%;
+  left: 32.55%;
+  right: 55%;
+  width: 30%;
+  padding-bottom: 10%;
+  font-size: 140%;
+}
+.bouton {
+  position: absolute;
+  top: 77%;
+  left: 43%;
+  right: 55%;
+  width: 10%;
+  height: 10%;
+  font-size: 150%;
+}
+
+
+
+
+/* password.html */
+
+
+.signup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+label {
+  color: #fff;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 60px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.inputpassword {
+  width: 60%;
+  height: 20px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #573b8a;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: .2s ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6d44b8;
 }

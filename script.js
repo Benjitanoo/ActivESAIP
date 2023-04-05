@@ -1,3 +1,8 @@
+
+
+/* Diaporama */
+
+
 // Variables globales
 let compteur = 0 // Compteur qui permettra de savoir sur quelle slide nous sommes
 let timer, elements, slides, slideWidth
@@ -72,6 +77,10 @@ function startTimer() {
     timer = setInterval(slideNext, 3500)
 }
 
+
+/*Requête API météo */
+
+
 // Récupération des données météo depuis l'API OpenWeatherMap
 const apiKey = '1e348b815215aac837e817503347beed'
 const city = 'Aix-en-Provence'
@@ -89,24 +98,51 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Aix-en-Provence&units=m
     })
     .catch(error => console.log(error))
 
-    //Requete API SAINT ELOI
-    const url = 'https://steloi.ogia.fr/ogia_ateliers_api.php';
+/*Message index.html*/
 
-    const data = {
-      "API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
-      "JOUR": "L"
-    };
-    
-    const headers = {
-      'Content-Type': 'application/json'
-    };
-    
-    fetch(url, {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
-    
+
+function envoyerMessage() {
+    // Récupérer la valeur de la zone de texte
+    var message = document.getElementById("message").value;
+    console.log("Message à envoyer : " + message);
+
+    // Rediriger vers index.html en passant la valeur du message en paramètre de l'URL
+    window.location.href = "index.html?message=" + encodeURIComponent(message);
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    var message = decodeURIComponent(window.location.search.replace("?message=", ""));
+    console.log("Message reçu : " + message);
+    document.getElementById("message").innerHTML = message;
+});
+
+var jourActuel = new Date().toLocaleDateString('fr-FR', { weekday: 'long' });
+
+//MENU
+
+//API ST ELOI
+fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
+    .then(response => response.text())
+    .then(result => results(result))
+    .catch(error => console.log('error', error));
+
+function results(data) {
+    var reponse = JSON.parse(data);
+    console.log("Objet reponse :");
+    console.log(reponse);
+
+    for (var key in reponse.ateliers) {
+        var ateliers = reponse.ateliers[key];
+        for (var i = 0; i < ateliers.length; i++) {
+            var creneau = reponse.horaires_creneau[key][i];
+            console.log("Matière: " + ateliers[i].intitule);
+            console.log("Horaire début: " + creneau[0]);
+            console.log("Horaire fin: " + creneau[1]);
+            console.log("Salle de cours: " + ateliers[i].salle);
+            console.log("Professeur: " + ateliers[i].prof);
+            console.log("");
+        }
+    }
+}
+
+
