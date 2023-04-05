@@ -7,11 +7,6 @@ body {
 
 /* titres */
 
-
-/* index.html */
-
-/* titres */
-
 .titre1 {
   font-size: 150%;
   background-color: lightblue;
@@ -64,6 +59,14 @@ body {
   left: 35%;
 }
 
+.titre7 {
+  font-size: 150%;
+  background-color: lightblue;
+  position: absolute;
+  top: 45%;
+  left: 33%;
+}
+
 /* Partie Menu */
 
 .Menu {
@@ -81,8 +84,6 @@ body {
   font-size: 150%;
   text-align: center;
 }
-
-/* Message en bas */
 
 /* Message en bas */
 
@@ -116,9 +117,6 @@ body {
 /* Partie prof absent */
 
 .ProfAbs {
-/* Partie prof absent */
-
-.ProfAbs {
   position: absolute;
   top: 69%;
   bottom: 15%;
@@ -144,8 +142,6 @@ body {
   text-align: center;
   /* ajouter une transformation pour faire défiler le texte de haut en bas */
 }
-
-/* Partie Évenements */
 
 /* Partie Évenements */
 
@@ -191,7 +187,7 @@ body {
 .JPOs>div {
   display: block;
   white-space: nowrap;
-  animation: Ateliers 20s infinite linear;
+  animation: Ateliers 40s infinite linear;
   cursor: pointer;
 }
 
@@ -274,7 +270,7 @@ main {
 
 #weather-widget {
   position: absolute;
-  bottom: 65.55.55%;
+  bottom: 65.55%;
   left: 1%;
   padding: 0%;
   height: 15%;
@@ -303,7 +299,6 @@ main {
   top: 25%;
   left: 65%;
   font-size: 165%;
-  font-size: 165%;
   color: black;
 }
 
@@ -329,16 +324,6 @@ main {
   100% {
     transform: translate3d(-100%, 0, 0);
   }
-/* Animation */
-
-@keyframes foot {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
 }
 
 @keyframes ProfAbs {
@@ -350,26 +335,8 @@ main {
     transform: translate3d(0, -100%, 0);
     /* ajuster la transformation pour faire défiler de haut en bas */
   }
-@keyframes ProfAbs {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, -100%, 0);
-    /* ajuster la transformation pour faire défiler de haut en bas */
-  }
 }
 
-@keyframes JPOs {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, -100%, 0);
-    /* ajuster la transformation pour faire défiler de haut en bas */
-  }
 @keyframes JPOs {
   0% {
     transform: translate3d(0, 0, 0);
@@ -394,125 +361,10 @@ main {
 
 /* back.html */
 
-/* back.html */
-
-.container  {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.cadre1 {
-  position: absolute;
-  top: 10%;
-  bottom: 50%;
-  left: 35%;
-  width: 25%;
-  height: 10%;
-  border: 10px solid white;
-  border-radius: 10%;
-}
-
-.cadre2 {
-  position: absolute;
-  top: 30%;
-  bottom: 20%;
-  left: 35%;
-  width: 25%;
-  height: 10%;
-  border: 10px solid white;
-  border-radius: 10%;
-}
-
-.Menub {
-  position: absolute;
-  top: 10%;
-  left: 28%;
-  right: 55%;
-}
-
-.Evenementsb {
-  position: absolute;
-  top: 10%;
-  left: 28%;
-  right: 55%;
-}
-
-.Messagesb {
-  position: absolute;
-  top: 50%;
-  left: 32.55%;
-  right: 55%;
-  width: 30%;
-  padding-bottom: 10%;
-  font-size: 140%;
-}
-.bouton {
-  position: absolute;
-  top: 77%;
-  left: 43%;
-  right: 55%;
-  width: 10%;
-  height: 10%;
-  font-size: 150%;
-}
-
-
-
-
-/* password.html */
-
-
-.signup {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-label {
-  color: #fff;
-  font-size: 2.3em;
-  justify-content: center;
-  display: flex;
-  margin: 60px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: .5s ease-in-out;
-}
-
-.inputpassword {
-  width: 60%;
-  height: 20px;
-  background: #e0dede;
-  justify-content: center;
-  display: flex;
-  margin: 20px auto;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-}
-
-button {
-  width: 60%;
-  height: 40px;
-  margin: 10px auto;
-  justify-content: center;
-  display: block;
-  color: #fff;
-  background: #573b8a;
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 20px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: .2s ease-in;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #6d44b8;
 }
 
 .cadre1 {
