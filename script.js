@@ -124,25 +124,37 @@ var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 var data = JSON.stringify({
-"API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
-"JOUR": "L",
+    "API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
+    "JOUR": "L",
 });
 
 var requestOptions = {
-method: 'POST',
-headers: myHeaders,
-body: data,
-redirect: 'follow'
+    method: 'POST',
+    headers: myHeaders,
+    body: data,
+    redirect: 'follow'
 };
 
 fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
-.then(response => response.text())
-.then(result => results(result))
-.catch(error => console.log('error', error));
+    .then(response => response.text())
+    .then(result => results(result))
+    .catch(error => console.log('error', error));
 
-function results(data)
-{
-var reponse=JSON.parse(data);
-console.log("Objet reponse :");
-console.log(reponse);
+function results(data) {
+    var reponse = JSON.parse(data);
+    console.log("Objet reponse :");
+    console.log(reponse);
+
+    for (var key in reponse.ateliers) {
+        var ateliers = reponse.ateliers[key];
+        for (var i = 0; i < ateliers.length; i++) {
+            var creneau = reponse.horaires_creneau[key][i];
+            console.log("Matière: " + ateliers[i].intitule);
+            console.log("Horaire début: " + creneau[0]);
+            console.log("Horaire fin: " + creneau[1]);
+            console.log("Salle de cours: " + ateliers[i].salle);
+            console.log("Professeur: " + ateliers[i].prof);
+            console.log("");
+        }
+    }
 }
