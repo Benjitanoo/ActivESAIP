@@ -142,20 +142,41 @@ fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
 
 function results(data) {
     var reponse = JSON.parse(data);
-    console.log("Objet reponse :");
-    console.log(reponse);
+    const debutPeriode = reponse.debut_periode;
+    const finPeriode = reponse.fin_periode;
+    const periodeEnCours = reponse.periode_en_cours;
 
-    for (var key in reponse.ateliers) {
-        var ateliers = reponse.ateliers[key];
-        var horaires = reponse.horaires_creneau[key];
+    const ateliersContainer = document.getElementById("messages-container");
+    const periodeInfo = document.createElement("p");
+    periodeInfo.textContent = `Période en cours : ${periodeEnCours} (${debutPeriode} - ${finPeriode})`;
+    ateliersContainer.appendChild(periodeInfo);
 
-        for (var i = 0; i < ateliers.length; i++) {
-            console.log("Matière: " + ateliers[i].intitule);
-            console.log("Horaire début: " + horaires[i][0]);
-            console.log("Horaire fin: " + horaires[i][1]);
-            console.log("Salle de cours: " + ateliers[i].salle);
-            console.log("Professeur: " + ateliers[i].prof);
-            console.log("");
+    for (let i = 1; i <= Object.keys(reponse.ateliers).length; i++) {
+        for (let j = 0; j < reponse.ateliers[i].length; j++) {
+            const atelier = reponse.ateliers[i][j];
+            const horaire = reponse.horaires_creneau[i];
+            const info = `${horaire} - ${atelier.intitule} avec ${atelier.prof} en ${atelier.salle}`;
+            const atelierInfo = document.createElement("p");
+            atelierInfo.textContent = info;
+            ateliersContainer.appendChild(atelierInfo);
         }
     }
 }
+
+const div = document.getElementById('atelier'); // Remplacez "myDiv" par l'ID de votre div
+
+const contentHeight = div.scrollHeight; // Hauteur totale du contenu de la div
+const divHeight = div.clientHeight; // Hauteur visible de la div
+const lines = contentHeight / divHeight; // Nombre de lignes de texte dans la div
+
+const speed = lines * 10; // Vitesse en pixels par seconde (50 est un facteur de vitesse arbitraire)
+
+div.style.animation = `scroll ${speed}s linear infinite`; // Définition de l'animation avec la vitesse calculée
+const messagesContainer = document.getElementById('messages-container');
+const messages = messagesContainer.innerHTML;
+
+// Remplacer "avec" et "en" par des sauts de ligne
+const messagesAvecSautsDeLigne = messages.replaceAll(/avec|en/g, '<br>');
+
+// Mettre à jour le contenu de "messages-container" avec le texte modifié
+messagesContainer.innerHTML = messagesAvecSautsDeLigne;

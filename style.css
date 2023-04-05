@@ -137,7 +137,7 @@ body {
 
 /* Partie Évenements */
 
-.JPOs {
+.Ateliers {
   position: absolute;
   top: 45%;
   bottom: 15%;
@@ -148,7 +148,7 @@ body {
   box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
 }
 
-.JPOs>div {
+.Ateliers>div {
   display: block;
   /* changer la propriété display pour passer de inline-block à block */
   white-space: nowrap;
@@ -156,7 +156,7 @@ body {
   cursor: pointer;
 }
 
-.jpo {
+.atlier {
   font-size: 150%;
   text-align: center;
   transform: translate3d(0, 100%, 0);
@@ -165,7 +165,7 @@ body {
 
 /* Ateliers */
 
-.Ateliers {
+.JPOs {
   position: absolute;
   top: 45%;
   bottom: 37%;
@@ -176,18 +176,16 @@ body {
   box-shadow: 0 .25% .5% #CCC, inset 0 0 1% .25% #CCC;
 }
 
-.Ateliers>div {
+.JPOs>div {
   display: block;
   white-space: nowrap;
-  animation: Ateliers 10s infinite linear;
+  animation: Ateliers 40s infinite linear;
   cursor: pointer;
 }
 
-.atelier {
-  font-size: 150%;
-  line-height: 230%;
-  text-align: center;
-  transform: translate3d(0, 100%, 0);
+.jpo {
+  overflow-y: scroll;
+  animation: scroll linear infinite;
 }
 
 .temp {
