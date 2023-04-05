@@ -155,9 +155,9 @@ function results(data) {
         for (let j = 0; j < reponse.ateliers[i].length; j++) {
             const atelier = reponse.ateliers[i][j];
             const horaire = reponse.horaires_creneau[i];
-            const info = `${horaire} - ${atelier.intitule} avec ${atelier.prof} en ${atelier.salle}`;
+            const info = `${horaire} - ${atelier.intitule} <br> ${atelier.prof} <br> ${atelier.salle}`;
             const atelierInfo = document.createElement("p");
-            atelierInfo.textContent = info;
+            atelierInfo.innerHTML = info;
             ateliersContainer.appendChild(atelierInfo);
         }
     }

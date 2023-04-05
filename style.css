@@ -143,7 +143,7 @@ body {
   /* ajouter une transformation pour faire défiler le texte de haut en bas */
 }
 
-/* Partie Évenements */
+/* Ateliers */
 
 .Ateliers {
   position: absolute;
@@ -164,14 +164,14 @@ body {
   cursor: pointer;
 }
 
-.atlier {
-  font-size: 150%;
+.atelier {
+  font-size: 125%;
   text-align: center;
   transform: translate3d(0, 100%, 0);
   /* ajouter une transformation pour faire défiler le texte de haut en bas */
 }
 
-/* Ateliers */
+/* Évenements */
 
 .JPOs {
   position: absolute;
