@@ -2,7 +2,6 @@ body {
   background-color: lightblue;
 }
 
-
 /* index.html */
 
 /* titres */
@@ -22,7 +21,7 @@ body {
   text-align: center;
   position: absolute;
   top: 40%;
-  left: 58%;
+  left: 18%;
 }
 
 .titre3 {
@@ -31,7 +30,7 @@ body {
   text-align: center;
   position: absolute;
   top: 40%;
-  left: 18%;
+  left: 58%;
 }
 
 .titre4 {
@@ -41,30 +40,6 @@ body {
   position: absolute;
   top: 38%;
   left: 1%;
-}
-
-.titre5 {
-  font-size: 150%;
-  background-color: lightblue;
-  position: absolute;
-  top: 6%;
-  left: 35%;
-}
-
-.titre6 {
-  font-size: 150%;
-  background-color: lightblue;
-  position: absolute;
-  top: 26%;
-  left: 35%;
-}
-
-.titre7 {
-  font-size: 150%;
-  background-color: lightblue;
-  position: absolute;
-  top: 45%;
-  left: 33%;
 }
 
 /* Partie Menu */
@@ -85,35 +60,6 @@ body {
   text-align: center;
 }
 
-/* Message en bas */
-
-.foot {
-  position: absolute;
-  top: 86%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border: 10px solid #F0F0FF;
-  border-radius: 10%;
-  box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
-  overflow: hidden;
-  font-size: 150%;
-}
-
-.foot>div {
-  display: inline-block;
-  padding-left: 100%;
-  white-space: nowrap;
-  animation: foot 15s infinite linear;
-  cursor: pointer;
-}
-
-.msg {
-  font-size: 150%;
-  line-height: 2em;
-  text-align: center;
-}
-
 /* Partie prof absent */
 
 .ProfAbs {
@@ -122,7 +68,6 @@ body {
   bottom: 15%;
   left: 18%;
   right: 43%;
-  /* ajustez la hauteur en fonction de vos besoins */
   border: 10px solid #F0F0FF;
   box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
   overflow: hidden;
@@ -130,7 +75,6 @@ body {
 
 .ProfAbs>div {
   display: block;
-  /* changer la propriété display pour passer de inline-block à block */
   white-space: nowrap;
   animation: ProfAbs 15s infinite linear;
   cursor: pointer;
@@ -140,7 +84,6 @@ body {
   font-size: 150%;
   transform: translate3d(0, 100%, 0);
   text-align: center;
-  /* ajouter une transformation pour faire défiler le texte de haut en bas */
 }
 
 /* Ateliers */
@@ -158,7 +101,6 @@ body {
 
 .Ateliers>div {
   display: block;
-  /* changer la propriété display pour passer de inline-block à block */
   white-space: nowrap;
   animation: Ateliers 40s infinite linear;
   cursor: pointer;
@@ -168,7 +110,6 @@ body {
   font-size: 125%;
   text-align: center;
   transform: translate3d(0, 100%, 0);
-  /* ajouter une transformation pour faire défiler le texte de haut en bas */
 }
 
 /* Évenements */
@@ -194,10 +135,6 @@ body {
 .jpo {
   overflow-y: scroll;
   animation: scroll linear infinite;
-}
-
-.temp {
-  font-size: 10%;
 }
 
 /* Diaporama */
@@ -358,50 +295,48 @@ main {
   }
 }
 
+/* Message en bas */
+
+.foot {
+  position: absolute;
+  top: 86%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 10px solid #F0F0FF;
+  border-radius: 10%;
+  box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
+  overflow: hidden;
+  font-size: 150%;
+}
+
+.foot>div {
+  display: inline-block;
+  padding-left: 100%;
+  white-space: nowrap;
+  animation: foot 15s infinite linear;
+  cursor: pointer;
+}
+
+.msg {
+  font-size: 150%;
+  line-height: 2em;
+  text-align: center;
+}
 
 /* back.html */
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* titres */
+
+.titre5 {
+  font-size: 150%;
+  background-color: lightblue;
+  position: absolute;
+  top: 45%;
+  left: 33%;
 }
 
-.cadre1 {
-  position: absolute;
-  top: 10%;
-  bottom: 50%;
-  left: 35%;
-  width: 25%;
-  height: 10%;
-  border: 10px solid white;
-  border-radius: 10%;
-}
-
-.cadre2 {
-  position: absolute;
-  top: 30%;
-  bottom: 20%;
-  left: 35%;
-  width: 25%;
-  height: 10%;
-  border: 10px solid white;
-  border-radius: 10%;
-}
-
-.Menub {
-  position: absolute;
-  top: 10%;
-  left: 28%;
-  right: 55%;
-}
-
-.Evenementsb {
-  position: absolute;
-  top: 10%;
-  left: 28%;
-  right: 55%;
-}
+/* Texte */
 
 .Messagesb {
   position: absolute;
@@ -412,6 +347,9 @@ main {
   padding-bottom: 10%;
   font-size: 140%;
 }
+
+/* Bouton */
+
 .bouton {
   position: absolute;
   top: 77%;
@@ -422,60 +360,3 @@ main {
   font-size: 150%;
 }
 
-
-
-
-/* password.html */
-
-
-.signup {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-label {
-  color: #fff;
-  font-size: 2.3em;
-  justify-content: center;
-  display: flex;
-  margin: 60px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: .5s ease-in-out;
-}
-
-.inputpassword {
-  width: 60%;
-  height: 20px;
-  background: #e0dede;
-  justify-content: center;
-  display: flex;
-  margin: 20px auto;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-}
-
-button {
-  width: 60%;
-  height: 40px;
-  margin: 10px auto;
-  justify-content: center;
-  display: block;
-  color: #fff;
-  background: #573b8a;
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 20px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: .2s ease-in;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #6d44b8;
-}

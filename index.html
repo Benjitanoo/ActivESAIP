@@ -11,9 +11,6 @@
 </head>
 
 <body>
-  <div class="foot">
-    <div class="msg" id="message"></div>
-  </div>
   <!-- Professeurs absents -->
   <div class="titre1">Professeurs absents</div>
   <div class="ProfAbs">
@@ -24,13 +21,21 @@
     </div>
   </div>
   <!-- Évenements -->
-  <div class="titre3">Évenements</div>
+  <div class="titre2">Évenements</div>
   <div class="JPOs">
     <div class="jpo">
       JPO<br>
       JPO<br>
       JPO<br>
       JPO<br>
+    </div>
+  </div>
+  <!-- Ateliers -->
+  <div class="titre3">Ateliers</div>
+  <div class="Ateliers">
+    <div class="atelier">
+      <div id="messages-container">
+      </div>
     </div>
   </div>
   <!-- Menu -->
@@ -42,8 +47,6 @@
       Dessert<br>
     </div>
   </div>
-
-
   <main>
     <!-- Conteneur principal de tout le diaporama -->
     <div class="diapo">
@@ -71,7 +74,6 @@
       <i id="nav-droite" class="las la-chevron-right"></i>
     </div>
   </main>
-
   <!-- Logo Saint-Éloi -->
   <div class="logo-Saint-Eloi">
     <a href="back.html">
@@ -86,21 +88,9 @@
       <span id="weather-desc"></span>
     </div>
   </div>
-  <!-- Ateliers -->
-  <div class="titre2">Ateliers</div>
-  <div class="Ateliers">
-    <div class="atelier">
-      <div id="messages-container">
-        <script>
-          const messagesContainer = document.getElementById('messages-container');
-          const text = messagesContainer.innerText;
-          const newText = text.replaceAll('avec', '<br>avec').replaceAll('en', '<br>en');
-          messagesContainer.innerHTML = newText;
-        </script>
-      </div>
-    </div>
+  <div class="foot">
+    <div class="msg" id="message"></div>
   </div>
-
 </body>
 
 </html>

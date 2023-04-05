@@ -1,5 +1,3 @@
-
-
 /* Diaporama */
 
 
@@ -98,7 +96,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Aix-en-Provence&units=m
     })
     .catch(error => console.log(error))
 
-/*Message index.html*/
+/*Message back.html vers index.html*/
 
 
 function envoyerMessage() {
@@ -115,8 +113,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log("Message reçu : " + message);
     document.getElementById("message").innerHTML = message;
 });
-
-var jourActuel = new Date().toLocaleDateString('fr-FR', { weekday: 'long' });
 
 //Requête API StEloi
 
@@ -139,6 +135,8 @@ fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
     .then(response => response.text())
     .then(result => results(result))
     .catch(error => console.log('error', error));
+
+/* Filtre ateliers */    
 
 function results(data) {
     var reponse = JSON.parse(data);
