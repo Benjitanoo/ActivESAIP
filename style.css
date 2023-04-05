@@ -191,7 +191,7 @@ body {
 .JPOs>div {
   display: block;
   white-space: nowrap;
-  animation: Ateliers 40s infinite linear;
+  animation: Ateliers 20s infinite linear;
   cursor: pointer;
 }
 
@@ -310,7 +310,7 @@ main {
 #weather-desc {
   bottom: 80%;
   right: 3%;
-  font-size: 160%;
+  font-size: 135%;
   color: black;
 }
 
