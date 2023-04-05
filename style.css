@@ -128,7 +128,7 @@ body {
 .JPOs>div {
   display: block;
   white-space: nowrap;
-  animation: Ateliers 40s infinite linear;
+  animation: Ateliers 15s infinite linear;
   cursor: pointer;
 }
 
