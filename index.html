@@ -7,13 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 </head>
 
 <body>
   <div class="foot">
     <div class="msg" id="message"></div>
+    <div class="msg" id="message"></div>
   </div>
+  <!-- Professeurs absents -->
+  <div class="titre1">Professeurs absents</div>
+  <div class="ProfAbs">
+    <div class="profabs">
   <!-- Professeurs absents -->
   <div class="titre1">Professeurs absents</div>
   <div class="ProfAbs">
@@ -35,9 +41,27 @@
   <div class="titre4">Menu</div>
   <div class="Menu">
     <div class="repas">
-      Entrée<br>
-      Plat<br>
-      Dessert<br>
+      <script>
+        onload = fetch("./Test.csv").then(res => {
+            return res.text()
+        }).then(data => {
+            let result = data.split(/\r?\n|\r/).map(e => {
+                return e.split(",")
+            })
+            result.forEach(e => {
+                let m = e.map(e => {
+                    return `<td>${e}</td>`;
+                }).join("")
+                let ce = document.createElement("tr");
+                ce.innerHTML = m;
+                if (ce.innerText != "") {
+                    document.querySelector("table").appendChild(ce);
+                }
+                // console.log(m);
+ 
+            })
+        })
+      </script>
     </div>
   </div>
 

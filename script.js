@@ -3,6 +3,11 @@
 /* Diaporama */
 
 
+
+
+/* Diaporama */
+
+
 // Variables globales
 let compteur = 0 // Compteur qui permettra de savoir sur quelle slide nous sommes
 let timer, elements, slides, slideWidth
@@ -81,6 +86,10 @@ function startTimer() {
 /*Requête API météo */
 
 
+
+/*Requête API météo */
+
+
 // Récupération des données météo depuis l'API OpenWeatherMap
 const apiKey = '1e348b815215aac837e817503347beed'
 const city = 'Aix-en-Provence'
@@ -118,23 +127,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 var jourActuel = new Date().toLocaleDateString('fr-FR', { weekday: 'long' });
 
-//Requête API StEloi
+//MENU
 
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-var data = JSON.stringify({
-    "API_KEY": "5656FD9CF72B47AFBCCE4917CDDF196B",
-    "JOUR": "L",
-});
-
-var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: data,
-    redirect: 'follow'
-};
-
+//API ST ELOI
 fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
     .then(response => response.text())
     .then(result => results(result))
@@ -142,23 +137,22 @@ fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
 
 function results(data) {
     var reponse = JSON.parse(data);
-    const debutPeriode = reponse.debut_periode;
-    const finPeriode = reponse.fin_periode;
-    const periodeEnCours = reponse.periode_en_cours;
+    console.log("Objet reponse :");
+    console.log(reponse);
 
-    const ateliersContainer = document.getElementById("messages-container");
-    const periodeInfo = document.createElement("p");
-    periodeInfo.textContent = `Période en cours : ${periodeEnCours} (${debutPeriode} - ${finPeriode})`;
-    ateliersContainer.appendChild(periodeInfo);
-
-    for (let i = 1; i <= Object.keys(reponse.ateliers).length; i++) {
-        for (let j = 0; j < reponse.ateliers[i].length; j++) {
-            const atelier = reponse.ateliers[i][j];
-            const horaire = reponse.horaires_creneau[i];
-            const info = `${horaire} - ${atelier.intitule} avec ${atelier.prof} en ${atelier.salle}`;
-            const atelierInfo = document.createElement("p");
-            atelierInfo.textContent = info;
-            ateliersContainer.appendChild(atelierInfo);
+    for (var key in reponse.ateliers) {
+        var ateliers = reponse.ateliers[key];
+        for (var i = 0; i < ateliers.length; i++) {
+            var creneau = reponse.horaires_creneau[key][i];
+            console.log("Matière: " + ateliers[i].intitule);
+            console.log("Horaire début: " + creneau[0]);
+            console.log("Horaire fin: " + creneau[1]);
+            console.log("Salle de cours: " + ateliers[i].salle);
+            console.log("Professeur: " + ateliers[i].prof);
+            console.log("");
         }
     }
 }
+
+
+
