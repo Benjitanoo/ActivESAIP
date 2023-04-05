@@ -59,6 +59,14 @@ body {
   left: 35%;
 }
 
+.titre7 {
+  font-size: 150%;
+  background-color: lightblue;
+  position: absolute;
+  top: 45%;
+  left: 33%;
+}
+
 /* Partie Menu */
 
 .Menu {
@@ -254,9 +262,9 @@ main {
   position: absolute;
   top: 0%;
   left: 3%;
-  width: 9.5%;
-  height: 19%;
-}
+  width: 9.5vw;
+  height: 19vh;
+  }
 
 /* meteo */
 
