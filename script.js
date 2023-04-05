@@ -162,21 +162,3 @@ function results(data) {
         }
     }
 }
-
-const div = document.getElementById('atelier'); // Remplacez "myDiv" par l'ID de votre div
-
-const contentHeight = div.scrollHeight; // Hauteur totale du contenu de la div
-const divHeight = div.clientHeight; // Hauteur visible de la div
-const lines = contentHeight / divHeight; // Nombre de lignes de texte dans la div
-
-const speed = lines * 10; // Vitesse en pixels par seconde (50 est un facteur de vitesse arbitraire)
-
-div.style.animation = `scroll ${speed}s linear infinite`; // Définition de l'animation avec la vitesse calculée
-const messagesContainer = document.getElementById('messages-container');
-const messages = messagesContainer.innerHTML;
-
-// Remplacer "avec" et "en" par des sauts de ligne
-const messagesAvecSautsDeLigne = messages.replaceAll(/avec|en/g, '<br>');
-
-// Mettre à jour le contenu de "messages-container" avec le texte modifié
-messagesContainer.innerHTML = messagesAvecSautsDeLigne;
