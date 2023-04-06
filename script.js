@@ -146,15 +146,38 @@ function results(data) {
 
     const ateliersContainer = document.querySelector('.Ateliers');
     const messagesContainer = document.getElementById("messages-container");
+    const horaireContainer = document.querySelector('.horaire');
 
-    for (let i = 1; i <= Object.keys(reponse.ateliers).length; i++) {
-        for (let j = 0; j < reponse.ateliers[i].length; j++) {
-            const atelier = reponse.ateliers[i][j];
-            const horaire = reponse.horaires_creneau[i];
-            const info = `<div id="info"> ${atelier.intitule} <br> ${atelier.prof} <br> ${atelier.salle}<br></div>`;
-            const atelierInfo = document.createElement("p");
-            atelierInfo.innerHTML = info;
-            messagesContainer.appendChild(atelierInfo);
-        }
+    // Vérification que l'élément horaire a été trouvé
+    if (horaireContainer === null) {
+      console.error("Element avec la classe 'horaire' introuvable !");
+      return;
     }
-}
+
+    // Création des boutons pour chaque horaire
+    for (let i = 1; i <= Object.keys(reponse.horaires_creneau).length; i++) {
+      const horaireBtn = document.createElement("div");
+      horaireBtn.innerText = reponse.horaires_creneau[i][0] + " - " + reponse.horaires_creneau[i][1];
+      horaireContainer.appendChild(horaireBtn);
+
+      // Ajout de l'événement de clic sur le bouton horaire
+      horaireBtn.addEventListener('click', function() {
+        // Suppression de tous les messages
+        messagesContainer.innerHTML = '';
+
+        // Ajout de la classe "selected" au bouton horaire cliqué
+        const horaireBtns = horaireContainer.querySelectorAll('div');
+        horaireBtns.forEach(btn => btn.classList.remove('selected'));
+        horaireBtn.classList.add('selected');
+
+        // Affichage des ateliers correspondant à l'horaire sélectionné
+        for (let j = 0; j < reponse.ateliers[i].length; j++) {
+          const atelier = reponse.ateliers[i][j];
+          const info = `<div id="info"> ${atelier.intitule} <br> ${atelier.prof} <br> ${atelier.salle}<br></div>`;
+          const atelierInfo = document.createElement("p");
+          atelierInfo.innerHTML = info;
+          messagesContainer.appendChild(atelierInfo);
+        }
+      });
+    }
+  }
