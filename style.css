@@ -99,17 +99,18 @@ body {
   box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
 }
 
-.Ateliers>div {
-  display: block;
-  white-space: nowrap;
-  animation: Ateliers 40s infinite linear;
-  cursor: pointer;
+#messages-container{
+  text-align: right;
+  font-size: 140%;
+  animation: defilement 35s linear infinite;
 }
 
-.atelier {
-  font-size: 125%;
-  text-align: center;
-  transform: translate3d(0, 100%, 0);
+.horaire {
+  position: absolute;
+  left: 60%;
+  top: 45%;
+  bottom: 15%;
+  overflow: hidden;
 }
 
 /* Évenements */
@@ -128,7 +129,7 @@ body {
 .JPOs>div {
   display: block;
   white-space: nowrap;
-  animation: Ateliers 40s infinite linear;
+  animation: Ateliers 15s infinite linear;
   cursor: pointer;
 }
 
@@ -285,13 +286,12 @@ main {
   }
 }
 
-@keyframes Ateliers {
+@keyframes defilement {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0, 0, 0);
   }
-
   100% {
-    transform: translate3d(0, -100%, 0);
+    transform: translateY(-100%);
   }
 }
 
