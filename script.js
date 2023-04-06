@@ -75,6 +75,31 @@ function startTimer() {
     timer = setInterval(slideNext, 3500)
 }
 
+// Récupère le dossier "Ressources"
+const ressourcesFolder = "Ressources/";
+
+// Récupère toutes les images du dossier
+const images = document.querySelectorAll(`img[src^="${ressourcesFolder}"]`);
+
+// Met à jour le nombre d'images dans le diaporama
+document.querySelector("#slideshow-count").innerHTML = images.length;
+
+// Affiche chaque image dans le diaporama
+images.forEach((image, index) => {
+  // Crée un élément de diapositive pour l'image
+  const slide = document.createElement("div");
+  slide.classList.add("slide");
+
+  // Crée l'élément d'image
+  const img = document.createElement("img");
+  img.src = image.src;
+
+  // Ajoute l'image à la diapositive
+  slide.appendChild(img);
+
+  // Ajoute la diapositive au diaporama
+  document.querySelector("#slideshow").appendChild(slide);
+});
 
 /*Requête API météo */
 
