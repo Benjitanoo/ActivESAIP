@@ -75,31 +75,6 @@ function startTimer() {
     timer = setInterval(slideNext, 3500)
 }
 
-// Récupère le dossier "Ressources"
-const ressourcesFolder = "Ressources/";
-
-// Récupère toutes les images du dossier
-const images = document.querySelectorAll(`img[src^="${ressourcesFolder}"]`);
-
-// Met à jour le nombre d'images dans le diaporama
-document.querySelector("#slideshow-count").innerHTML = images.length;
-
-// Affiche chaque image dans le diaporama
-images.forEach((image, index) => {
-  // Crée un élément de diapositive pour l'image
-  const slide = document.createElement("div");
-  slide.classList.add("slide");
-
-  // Crée l'élément d'image
-  const img = document.createElement("img");
-  img.src = image.src;
-
-  // Ajoute l'image à la diapositive
-  slide.appendChild(img);
-
-  // Ajoute la diapositive au diaporama
-  document.querySelector("#slideshow").appendChild(slide);
-});
 
 /*Requête API météo */
 
@@ -163,46 +138,58 @@ fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
 
 /* Filtre ateliers */    
 
-function results(data) {
-    var reponse = JSON.parse(data);
-    const debutPeriode = reponse.debut_periode;
-    const finPeriode = reponse.fin_periode;
-    const periodeEnCours = reponse.periode_en_cours;
+let horairesCreneauIndex = 0;
+let ateliersIndex = 0;
+const horairesContainer = document.querySelector(".horaires");
+const ateliersContainer = document.querySelector(".ateliers");
 
-    const ateliersContainer = document.querySelector('.Ateliers');
-    const messagesContainer = document.getElementById("messages-container");
-    const horaireContainer = document.querySelector('.horaire');
+function afficherHorairesEtAteliers(data) {
+  const reponse = JSON.parse(data);
+  const horairesCreneau = reponse.horaires_creneau;
+  const ateliers = reponse.ateliers;
+  const horaires = horairesCreneau[horairesCreneauIndex];
+  const ateliersDuCreneau = ateliers[horairesCreneauIndex];
 
-    // Vérification que l'élément horaire a été trouvé
-    if (horaireContainer === null) {
-      console.error("Element avec la classe 'horaire' introuvable !");
-      return;
-    }
+  // Affichage des horaires
+  horairesContainer.textContent = horaires.join(" - ");
 
-    // Création des boutons pour chaque horaire
-    for (let i = 1; i <= Object.keys(reponse.horaires_creneau).length; i++) {
-      const horaireBtn = document.createElement("div");
-      horaireBtn.innerText = reponse.horaires_creneau[i][0] + " - " + reponse.horaires_creneau[i][1];
-      horaireContainer.appendChild(horaireBtn);
-
-      // Ajout de l'événement de clic sur le bouton horaire
-      horaireBtn.addEventListener('click', function() {
-        // Suppression de tous les messages
-        messagesContainer.innerHTML = '';
-
-        // Ajout de la classe "selected" au bouton horaire cliqué
-        const horaireBtns = horaireContainer.querySelectorAll('div');
-        horaireBtns.forEach(btn => btn.classList.remove('selected'));
-        horaireBtn.classList.add('selected');
-
-        // Affichage des ateliers correspondant à l'horaire sélectionné
-        for (let j = 0; j < reponse.ateliers[i].length; j++) {
-          const atelier = reponse.ateliers[i][j];
-          const info = `<div id="info"> ${atelier.intitule} <br> ${atelier.prof} <br> ${atelier.salle}<br></div>`;
-          const atelierInfo = document.createElement("p");
-          atelierInfo.innerHTML = info;
-          messagesContainer.appendChild(atelierInfo);
-        }
-      });
-    }
+  // Affichage des ateliers
+  ateliersContainer.innerHTML = "";
+  for (let i = ateliersIndex; i < ateliersDuCreneau.length; i++) {
+    const atelier = ateliersDuCreneau[i];
+    const info = `<div class="atelier-info">${atelier.intitule} <br> ${atelier.prof} <br> ${atelier.salle}</div>`;
+    const atelierDiv = document.createElement("div");
+    atelierDiv.classList.add("atelier");
+    atelierDiv.innerHTML = info;
+    ateliersContainer.appendChild(atelierDiv);
   }
+
+  // Animation de défilement des ateliers
+  const ateliersContainerHeight = ateliersContainer.clientHeight;
+  const ateliersHeight = ateliersContainer.querySelector(".atelier").clientHeight;
+  const ateliersDuration = ateliersDuCreneau.length * (ateliersHeight + 10) * 20; // Durée de l'animation en ms
+  ateliersContainer.style.animationDuration = ateliersDuration + "ms";
+
+  // Passage au prochain créneau horaire et à la première liste d'ateliers si on a fini de parcourir la liste actuelle
+  if (ateliersIndex === ateliersDuCreneau.length - 1) {
+    horairesCreneauIndex = (horairesCreneauIndex + 1) % horairesCreneau.length;
+    ateliersIndex = 0;
+  } else {
+    ateliersIndex++;
+  }
+
+  // Si on a parcouru tous les ateliers de tous les créneaux, on recommence depuis le début
+  if (horairesCreneauIndex === 0 && ateliersIndex === 0) {
+    setTimeout(() => {
+      afficherHorairesEtAteliers(data);
+    }, ateliersDuration);
+  }
+}
+
+// Appel initial de la fonction
+fetch("https://example.com/data.json")
+  .then(response => response.text())
+  .then(data => {
+    afficherHorairesEtAteliers(data);
+  })
+  .catch(error => console.log(error));
