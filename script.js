@@ -144,19 +144,17 @@ function results(data) {
     const finPeriode = reponse.fin_periode;
     const periodeEnCours = reponse.periode_en_cours;
 
-    const ateliersContainer = document.getElementById("messages-container");
-    const periodeInfo = document.createElement("p");
-    periodeInfo.textContent = `Période en cours : ${periodeEnCours} (${debutPeriode} - ${finPeriode})`;
-    ateliersContainer.appendChild(periodeInfo);
+    const ateliersContainer = document.querySelector('.Ateliers');
+    const messagesContainer = document.getElementById("messages-container");
 
     for (let i = 1; i <= Object.keys(reponse.ateliers).length; i++) {
         for (let j = 0; j < reponse.ateliers[i].length; j++) {
             const atelier = reponse.ateliers[i][j];
             const horaire = reponse.horaires_creneau[i];
-            const info = `${horaire} - ${atelier.intitule} <br> ${atelier.prof} <br> ${atelier.salle}`;
+            const info = `<div id="info"> ${atelier.intitule} <br> ${atelier.prof} <br> ${atelier.salle}<br></div>`;
             const atelierInfo = document.createElement("p");
             atelierInfo.innerHTML = info;
-            ateliersContainer.appendChild(atelierInfo);
+            messagesContainer.appendChild(atelierInfo);
         }
     }
 }
