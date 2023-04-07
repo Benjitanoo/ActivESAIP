@@ -1,6 +1,7 @@
 body {
   background-image: url("Ressources/background.jpg");
   font-family: Century;
+  scroll-behavior: smooth;
 }
 
 /* index.html */
@@ -59,12 +60,50 @@ body {
 }
 
 #repas {
-  font-size: 100%;
   text-align: center;
+  font-size: 140%;
+  animation: Repas 10s linear infinite;
+}
+
+@keyframes Repas {
+  0% {
+    transform: translateY(+80%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Ateliers */
+.Ateliers {
+  position: absolute;
+  top: 43%;
+  bottom: 15%;
+  left: 58%;
+  right: 1%;
+  overflow: hidden;
+  border: 10px solid #F0F0FF;
+  border-radius: 10px;
+  box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
+  color: white;
+}
+
+#messages-container {
+  text-align: center;
+  font-size: 140%;
+  animation: Ateliers 50s linear infinite;
+}
+
+@keyframes Ateliers {
+  0% {
+    transform: translateY(+10%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 /* Partie prof absent */
-
 .ProfAbs {
   position: absolute;
   top: 69%;
@@ -81,30 +120,17 @@ body {
 #profabs {
   text-align: center;
   font-size: 140%;
-  animation: defilement 35s linear infinite;
+  animation: ProfAbs 10s linear infinite;
 }
 
-/* Ateliers */
-
-.Ateliers {
-  position: absolute;
-  top: 43%;
-  bottom: 15%;
-  left: 58%;
-  right: 1%;
-  overflow: hidden;
-  border: 10px solid #F0F0FF;
-  border-radius: 10px;
-  box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
-  color: white;
+@keyframes ProfAbs {
+  0% {
+    transform: translateY(+155%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
-
-#messages-container{
-  text-align: center;
-  font-size: 140%;
-  animation: defilement 35s linear infinite;
-}
-
 
 /* Évenements */
 
@@ -122,16 +148,19 @@ body {
   text-align: center;
 }
 
-.JPOs>div {
-  display: block;
-  white-space: nowrap;
-  animation: defilement 20s infinite linear;
-  cursor: pointer;
+#jpo {
+  overflow-y: scroll;
+  font-size: 140%;
+  animation: JPOs 10s linear infinite;
 }
 
-.jpo {
-  overflow-y: scroll;
-  animation: scroll linear infinite;
+@keyframes JPOs {
+  0% {
+    transform: translateY(+200%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 /* Diaporama */
@@ -248,27 +277,6 @@ main {
   height: 15%;
 }
 
-/* Animations */
-
-@keyframes defilement {
-  0% {
-    transform: translateY(0, 0, 0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes foot {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
 /* Message en bas */
 
 .foot {
@@ -297,6 +305,16 @@ main {
   line-height: 2em;
   text-align: center;
   color: white;
+}
+
+@keyframes foot {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 /* back.html */
