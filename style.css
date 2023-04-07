@@ -190,9 +190,9 @@ main {
 .diapo {
   position: absolute;
   overflow: hidden;
-  bottom: 62%;
+  bottom: 75%;
   left: 17%;
-  right: 1%;
+  right: 17%;
 }
 
 #nav-droite,
@@ -240,9 +240,9 @@ main {
 
 .logo-Saint-Eloi img {
   position: absolute;
-  bottom: 81%;
-  left: 4%;
-  width: 9vw;
+  bottom: 75%;
+  left: 2%;
+  width: 12vw;
   height: auto;
   }
 
@@ -250,8 +250,8 @@ main {
 
 #weather-widget {
   position: absolute;
-  bottom: 65.55%;
-  left: 1%;
+  top: 2%;
+  right: 1%;
   padding: 0%;
   height: 15%;
   background-color: transparent;
