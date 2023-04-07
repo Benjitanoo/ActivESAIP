@@ -62,7 +62,16 @@ body {
 #repas {
   text-align: center;
   font-size: 140%;
-  animation: Repas 10s linear infinite;
+  animation: Repas 20s linear infinite;
+}
+
+#assiette{
+  position: absolute;
+  top: 38%;
+  left: 0%;
+  width: 8vw;
+  height: 10vh;
+
 }
 
 @keyframes Repas {
@@ -91,7 +100,7 @@ body {
 #messages-container {
   text-align: center;
   font-size: 140%;
-  animation: Ateliers 50s linear infinite;
+  animation: Ateliers 65s linear infinite;
 }
 
 @keyframes Ateliers {
@@ -154,9 +163,17 @@ body {
   animation: JPOs 10s linear infinite;
 }
 
+#jpoimage{
+  position: absolute;
+  top: 38%;
+  left: 16%;
+  width: 8vw;
+  height: 10vh;
+}
+
 @keyframes JPOs {
   0% {
-    transform: translateY(+200%);
+    transform: translateY(+190%);
   }
   100% {
     transform: translateY(-100%);
@@ -223,10 +240,10 @@ main {
 
 .logo-Saint-Eloi img {
   position: absolute;
-  top: 0%;
-  left: 3%;
-  width: 9.5vw;
-  height: 19vh;
+  top: 1%;
+  left: 4%;
+  width: 9vw;
+  height: auto;
   }
 
 /* meteo */
@@ -261,14 +278,14 @@ main {
 #weather-temp {
   top: 25%;
   left: 65%;
-  font-size: 165%;
+  font-size: 155%;
   color: black;
 }
 
 #weather-desc {
   bottom: 80%;
   right: 3%;
-  font-size: 135%;
+  font-size: 120%;
   color: black;
 }
 
@@ -305,6 +322,14 @@ main {
   line-height: 2em;
   text-align: center;
   color: white;
+}
+
+#news{
+  position: absolute;
+  top: 76%;
+  left: 0%;
+  width: 10vw;
+  height: auto;
 }
 
 @keyframes foot {
