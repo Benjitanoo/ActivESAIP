@@ -12,7 +12,7 @@ body {
   position: absolute;
   top: 30%;
   left: 1%;
-  right: 84%;
+  right: 78%;
   bottom: 15%;
   border: 10px solid #F0F0FF;
   border-radius: 10px;
@@ -69,8 +69,8 @@ body {
   position: absolute;
   top: 58%;
   bottom: 15%;
-  left: 17%;
-  right: 43%;
+  left: 23%;
+  right: 37%;
   border: 10px solid #F0F0FF;
   border-radius: 10px;
   box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
@@ -87,7 +87,7 @@ body {
 #absent{
   position: absolute;
   top: 58%;
-  left: 18%;
+  left: 24%;
   width: 8vw;
   height: auto;
 }
@@ -107,8 +107,8 @@ body {
   position: absolute;
   top: 30%;
   bottom: 45%;
-  left: 17%;
-  right: 43%;
+  left: 23%;
+  right: 37%;
   overflow: hidden;
   border: 10px solid #F0F0FF;
   border-radius: 10px;
@@ -126,7 +126,7 @@ body {
 #jpoimage{
   position: absolute;
   top: 25%;
-  left: 16%;
+  left: 22%;
   width: 8vw;
   height: 10vh;
 }
@@ -210,8 +210,8 @@ main {
 
 #weather-widget {
   position: absolute;
-  top: 1%;
-  right: 1%;
+  top: 0%;
+  right: 0%;
   padding: 0%;
   height: 15%;
   background-color: transparent;
