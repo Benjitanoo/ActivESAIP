@@ -31,7 +31,7 @@ body {
   top: 25%;
   left: 0%;
   width: 8vw;
-  height: 10vh;
+  height: 11vh;
 
 }
 
@@ -97,7 +97,7 @@ body {
     transform: translateY(+155%);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-155%);
   }
 }
 
@@ -127,8 +127,8 @@ body {
   position: absolute;
   top: 25%;
   left: 22%;
-  width: 8vw;
-  height: 10vh;
+  width: 10vw;
+  height: 12vh;
 }
 
 @keyframes JPOs {
@@ -151,8 +151,8 @@ main {
   position: absolute;
   overflow: hidden;
   bottom: 75%;
-  left: 17%;
-  right: 17%;
+  left: 16%;
+  right: 16%;
 }
 
 #nav-droite,
@@ -200,59 +200,11 @@ main {
 
 .logo-Saint-Eloi img {
   position: absolute;
-  bottom: 75%;
+  top: 0%;
   left: 2%;
   width: 12vw;
   height: auto;
   }
-
-/* meteo */
-
-#weather-widget {
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  padding: 0%;
-  height: 15%;
-  background-color: transparent;
-  box-shadow: 0% 0% 10% rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-}
-
-.weather-image-container {
-  position: relative;
-}
-
-.weather-image-container img {
-  width: 100%;
-}
-
-.weather-image-container span {
-  position: absolute;
-  color: white;
-  font-weight: bold;
-  text-shadow: 1% 1% 2% black;
-  z-index: 1;
-}
-
-#weather-temp {
-  top: 25%;
-  left: 65%;
-  font-size: 155%;
-  color: black;
-}
-
-#weather-desc {
-  bottom: 80%;
-  right: 3%;
-  font-size: 120%;
-  color: black;
-}
-
-#weather-widget {
-  width: 15%;
-  height: 15%;
-}
 
 /* Message en bas */
 
@@ -302,6 +254,31 @@ main {
   }
 }
 
+#meteomessage{
+  position: relative;
+  font-size: 110%;
+  font-family: 'Century Gothic';
+  font-weight: bold;
+}
+
+.meteo {
+  position: absolute;
+  top: 1%;
+  right: 0;
+  width: 14vw;
+  height: 21vh;
+  border: 10px solid #F0F0FF;
+  border-radius: 30px;
+  box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
+}
+
+#date-time {
+  position: relative;
+  font-size: 130%;
+  font-weight: bolder;
+  font-family: 'Century Gothic';
+}
+
 /* back.html */
 
 /* titres */
@@ -341,3 +318,6 @@ main {
 #href{
   color: white;
 }
+
+
+
