@@ -207,6 +207,3 @@ fetch('http://127.0.0.1:5000/Excel_data')
       
       // Appeler la fonction afficherDateActuelle toutes les secondes
       setInterval(afficherDateActuelle, 1000);
-      function scroll{
-        
-      }
