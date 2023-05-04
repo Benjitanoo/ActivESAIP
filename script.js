@@ -148,6 +148,7 @@ function results(data) {
 
     const ateliersContainer = document.querySelector('.Ateliers');
     const messagesContainer = document.getElementById("messages-container");
+    const profAbsContainer = document.getElementById("profabs");
 
     for (let i = 1; i <= Object.keys(reponse.ateliers).length; i++) {
         for (let j = 0; j < reponse.ateliers[i].length; j++) {
@@ -159,7 +160,18 @@ function results(data) {
             messagesContainer.appendChild(atelierInfo);
         }
     }
+
+    const profsAbsents = reponse.profs_absents;
+    for (let i = 0; i < profsAbsents.length; i++) {
+        const profAbsent = profsAbsents[i];
+        const profInfo = document.createElement("p");
+        profInfo.innerHTML = `${profAbsent.Nom} ${profAbsent.Prenom}`;
+        profAbsContainer.appendChild(profInfo);
+    }
 }
+
+
+
 
 
 fetch('http://127.0.0.1:5000/Excel_data')
@@ -195,4 +207,5 @@ fetch('http://127.0.0.1:5000/Excel_data')
       
       // Appeler la fonction afficherDateActuelle toutes les secondes
       setInterval(afficherDateActuelle, 1000);
+
       

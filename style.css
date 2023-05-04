@@ -94,10 +94,10 @@ body {
 
 @keyframes ProfAbs {
   0% {
-    transform: translateY(+155%);
+    transform: translateY(+550%);
   }
   100% {
-    transform: translateY(-155%);
+    transform: translateY(-240%);
   }
 }
 
