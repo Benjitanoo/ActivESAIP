@@ -65,6 +65,7 @@ body {
 }
 
 /* Partie prof absent */
+
 .ProfAbs {
   position: absolute;
   top: 58%;
@@ -74,14 +75,14 @@ body {
   border: 10px solid #F0F0FF;
   border-radius: 10px;
   box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
-  overflow: hidden;
+  max-height: 200px; /* Hauteur maximale pour afficher le contenu sans défilement */
+  overflow-y: auto; /* Ajoute une barre de défilement verticale lorsque le contenu dépasse la hauteur maximale */
   color: white;
 }
 
-#profabs {
+#scrollable {
   text-align: center;
   font-size: 140%;
-  animation: none; /* annule l'animation par défaut */
 }
 
 #absent{
@@ -90,20 +91,6 @@ body {
   left: 24%;
   width: 8vw;
   height: auto;
-}
-
-/* vérifie la hauteur du conteneur de texte */
-.ProfAbs[data-height="auto"] #profabs {
-  animation: ProfAbs 10s linear infinite;
-}
-
-@keyframes ProfAbs {
-  0% {
-    transform: translateY(+550%);
-  }
-  100% {
-    transform: translateY(-240%);
-  }
 }
 
 /* Évenements */
