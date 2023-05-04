@@ -138,7 +138,7 @@ fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
 
 /* Filtre ateliers */
 
-function results(data) {
+/*function results(data) {
     var reponse = JSON.parse(data);
     console.log("Objet reponse :");
     console.log(reponse);
@@ -168,7 +168,7 @@ function results(data) {
         profInfo.innerHTML = `${profAbsent.Nom} ${profAbsent.Prenom}`;
         profAbsContainer.appendChild(profInfo);
     }
-}
+}*/
 
 
 
