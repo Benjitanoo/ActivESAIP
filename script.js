@@ -138,7 +138,7 @@ fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
 
 /* Filtre ateliers */
 
-/*function results(data) {
+function results(data) {
     var reponse = JSON.parse(data);
     console.log("Objet reponse :");
     console.log(reponse);
@@ -168,7 +168,7 @@ fetch("https://steloi.ogia.fr/ogia_ateliers_api.php", requestOptions)
         profInfo.innerHTML = `${profAbsent.Nom} ${profAbsent.Prenom}`;
         profAbsContainer.appendChild(profInfo);
     }
-}*/
+}
 
 
 
@@ -191,23 +191,19 @@ fetch('http://127.0.0.1:5000/Excel_data')
     })
     .catch(error => console.error(error));
 
-    function afficherDateActuelle() {
-        // Récupérer la date actuelle
-        const date = new Date();
-      
-        // Formater la date comme "Lundi 17 avril 2023" et l'heure comme "hh:mm:ss"
-        const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-        const dateString = date.toLocaleDateString('fr-FR', optionsDate);
-        const optionsHeure = { hour: 'numeric', minute: 'numeric'};
-        const heureString = date.toLocaleTimeString('fr-FR', optionsHeure);
-      
-        // Mettre à jour le contenu de la div avec l'ID "date-time"
-        document.getElementById('date-time').innerHTML = dateString + '<br>' + heureString;
-      }
-      
-      // Appeler la fonction afficherDateActuelle toutes les secondes
-      setInterval(afficherDateActuelle, 1000);
+function afficherDateActuelle() {
+    // Récupérer la date actuelle
+    const date = new Date();
 
-      function scroll{
-        
-      }
+    // Formater la date comme "Lundi 17 avril 2023" et l'heure comme "hh:mm:ss"
+    const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    const dateString = date.toLocaleDateString('fr-FR', optionsDate);
+    const optionsHeure = { hour: 'numeric', minute: 'numeric' };
+    const heureString = date.toLocaleTimeString('fr-FR', optionsHeure);
+
+    // Mettre à jour le contenu de la div avec l'ID "date-time"
+    document.getElementById('date-time').innerHTML = dateString + '<br>' + heureString;
+}
+
+// Appeler la fonction afficherDateActuelle toutes les secondes
+setInterval(afficherDateActuelle, 1000);
