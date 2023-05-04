@@ -81,7 +81,7 @@ body {
 #profabs {
   text-align: center;
   font-size: 140%;
-  animation: ProfAbs 10s linear infinite;
+  animation: none; /* annule l'animation par défaut */
 }
 
 #absent{
@@ -90,6 +90,11 @@ body {
   left: 24%;
   width: 8vw;
   height: auto;
+}
+
+/* vérifie la hauteur du conteneur de texte */
+.ProfAbs[data-height="auto"] #profabs {
+  animation: ProfAbs 10s linear infinite;
 }
 
 @keyframes ProfAbs {
