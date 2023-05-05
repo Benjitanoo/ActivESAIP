@@ -118,7 +118,6 @@ body {
 }
 
 #jpo {
-  overflow-y: scroll;
   font-size: 140%;
   animation: JPOs 10s linear infinite;
 }
@@ -255,7 +254,9 @@ main {
 }
 
 #meteomessage{
-  position: relative;
+  position: absolute;
+  bottom: 0%;
+  left: 35%;
   font-size: 110%;
   font-family: 'Century Gothic';
   font-weight: bold;
@@ -273,7 +274,8 @@ main {
 }
 
 #date-time {
-  position: relative;
+  position: absolute;
+  top: 0%;
   font-size: 130%;
   font-weight: bolder;
   font-family: 'Century Gothic';
@@ -286,7 +288,7 @@ main {
 .titre5 {
   font-size: 150%;
   position: absolute;
-  top: 45%;
+  top: 20%;
   left: 33%;
   color: white;
 }
@@ -295,7 +297,7 @@ main {
 
 .Messagesb {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 32.55%;
   right: 55%;
   width: 30%;
@@ -307,7 +309,7 @@ main {
 
 .bouton {
   position: absolute;
-  top: 77%;
+  top: 51%;
   left: 43%;
   right: 55%;
   width: 10%;
