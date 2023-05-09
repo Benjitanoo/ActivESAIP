@@ -170,25 +170,24 @@ function results(data) {
     }
 }
 
+
+
+
+
 fetch('http://127.0.0.1:5000/Excel_data')
     .then(response => response.json())
     .then(data => {
         const jpoDiv = document.getElementById('jpo');
         const menudiv = document.getElementById('repas');
-        
-        if (data.error === "NO_PER") {
-            jpoDiv.innerHTML = "Il n'y a pas de professeur absent";
-        } else {
-            jpoDiv.innerHTML = `
-                Evénements à venir :
-                <br>
-                    ${data.evenement.map(evenement => `${evenement['Date']} - ${evenement['Nom etablissement']} - ${evenement['Specialite']} - ${evenement['Localisation']}.<br>`).join('')}
-            `;
-        }
-        
-        menudiv.innerHTML = `
-            Entrées : <br>${data.entree} <br><br> Plats : <br>${data.plat} <br><br> Desserts : <br>${data.dessert}
+        jpoDiv.innerHTML = `
+            Evénements à venir :
+            <br>
+                ${data.evenement.map(evenement => `${evenement['Date']} - ${evenement['Nom etablissement']} - ${evenement['Specialite']} - ${evenement['Localisation']}.<br>`).join('')}
+            
         `;
+        menudiv.innerHTML = `
+        Entrées : <br>${data.entree} <br><br> Plats : <br>${data.plat} <br><br> Desserts : <br>${data.dessert}
+    `;
     })
     .catch(error => console.error(error));
 
